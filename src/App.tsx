@@ -1,9 +1,11 @@
-import TopPanel from "./components/TopPanel";
+import Header from "./components/Header";
+import Routes from "./pages";
 
 function App() {
   return (
     <>
-      <TopPanel />
+      <Header />
+      <Routes />
     </>
   );
 }
