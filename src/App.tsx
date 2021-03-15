@@ -1,5 +1,11 @@
+import TopPanel from "./components/TopPanel";
+
 function App() {
-  return <div>app</div>;
+  return (
+    <>
+      <TopPanel />
+    </>
+  );
 }
 
 export default App;
