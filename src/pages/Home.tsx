@@ -5,7 +5,7 @@ import Box from "@material-ui/core/Box";
 import TextField from "@material-ui/core/TextField";
 import SearchIcon from "@material-ui/icons/Search";
 import IconButton from "@material-ui/core/IconButton";
-
+import debounce from "lodash/debounce";
 import { useFormik } from "formik";
 import * as yup from "yup";
 
@@ -67,9 +67,11 @@ const Home = () => {
               value={values.textSearch}
               onChange={(e) => {
                 handleChange(e);
-                setTimeout(() => {
-                  handleSubmit();
-                }, 0);
+
+                debounce(handleSubmit, 750)();
+                // setTimeout(() => {
+                // handleSubmit();
+                // }, 0);
               }}
               error={!!(errors.textSearch && touched.textSearch)}
               helperText={
